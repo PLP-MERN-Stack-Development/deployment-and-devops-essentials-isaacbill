@@ -14,6 +14,11 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+app.use(cors({
+  origin: "https://mern-blog-ilio.onrender.com", // Replace with your deployed frontend URL
+  credentials: true
+}));
+
 // static uploads
 app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 
